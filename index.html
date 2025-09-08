@@ -3,31 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT24A- Event Programming</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    
+    <h1>TO DO LIST</h1>
+    <input type = "text"
+           id = "taskinput"
+           placeholder="Add a task"
+  /> 
+   <button onclick="addTask()">add</button>
 
-    <input type="text"
-    id="textbox"
-    placeholder="type something here..."
-    oninput="updateDisplay()";>
+   <ul id="tasklist"> Your tasks goes here ...</ul>
 
-    <h1 id="display text">Your text goes here</h1>
+ <script>
 
-</body>
-<script>
-    function updateDisplay(){
-        var textbox = document.getElementById('textbox');
-        var display = document.getElementById('displaytext');
-        var display = document.getElementById('displaytext2');
-        const d = new Date();
+function addTask() {
+   const taskText = getTaskText();
 
-        //displayText.textContent = textbox.value;
-        //displayText.textContent = textbox.value;
-        console.log(textbox.value + d + ""+window.location.hostname);
+   if(taskText){
+    addTaskItem(taskText);
+   } else {
+    console.log("No task entered");
+   }
 
+}
+
+function getTaskText() {
+const input =document.getElementById('taskinput');
+const text = input.value.trim();
+
+console.log("getTaskText() called: " + input.value);
+return text;
+}
+
+function addTaskItem(taskText){
+    const li = document.createElement("li");
+    li.textContent = taskText;
+
+    document.getElementById("tasklist").appendChild(li);
+    console.log("addTaskItem() called ->: ", taskText, Date());
+
+    const deleteBtn = createDeleteButton(li);
+    li.appendChild(deleteBtn);
+}
+
+    function createDeleteButton(li){
+        const deleteBtn = document.createElement("button");
+
+        deleteBtn.textContent="X";
+        deleteBtn.className="delete=btn";
+        deleteBtn.style.marginleft = "8px";
+        deleteBtn.style.backgroundColor = "#008000"
+        deleteBtn.onclick = () => handleDeleteClick(li);
+
+        console.log("createDeleteButton() called ->", li.textContent);
+        return deleteBtn;
     }
 
-</script>    
+    function handleDeleteClick(li){
+        li.remove();
+        console.log("handleDeleteClick() called ->", li.textContent.replace("x","").trim,Date());
+    }
+ </script>
+
+ </body>
 </html>
