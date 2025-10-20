@@ -1,6 +1,18 @@
-[{
-    "name";"ICS labratory 1"
-    "title" : "ICS lab 1",
-    "description"; "computer lab 1"
-    "ing":
-}]
+[
+    {
+        "name":"ICS Laboratory 1",
+        "title":"ICS Lab 1",
+        "description":"Computer Lab",
+        "img":"https://i.imgflip.com/7f9vxf.jpg",
+        "lat":8.3593, 
+        "lng":124.8691
+    },
+    {
+        "name":"Northern Bukidnon State College Grounds",
+        "title":"NBSC Grounds",
+        "description":"kabanglasan",
+        "img":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Fmonkey-puppet&psig=AOvVaw3l9QiGCzBEJLkFyr45o-kA&ust=1761008728890000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCGpoXLsZADFQAAAAAdAAAAABAE",
+        "lat":8.3606, 
+        "lng":124.8683
+    }
+]
