@@ -48,6 +48,20 @@ function initMap(mapDataUrl){
 }).addTo(map);
 console.log("Map loaded" + Date());
 
+fetch(mapDataUrl)
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(pin=>{
+            const marker = L.marker([pin.lat,pin.lng]).addTo(map);
+            const img = `<img src= '${pin.img}' class=popoup-image>`;
+            const popupContent = `${img}<br><b> ${pin.title} </b><br> ${pin.description} `;
+
+            console.log(`${pin.img} Loaded`)
+        })
+
+    })
+
+}
 
 </script>
 </html>
